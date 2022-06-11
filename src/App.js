@@ -25,8 +25,9 @@ import {
 
 import Expenses from "./routes/expenses";
 import Invoices from "./routes/invoices";
-
+import {AddVacance}  from './AddVacance';
 import main from "./images/main.png";
+import {Link} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root")
@@ -75,6 +76,10 @@ function clicked()
   alert("volunteer")
 }
 
+function goToAddVacance()
+{
+  return <Link to="/addVacance" />
+}
 
   return (
     <div className="App">
@@ -92,7 +97,7 @@ function clicked()
     <RegisterButton>
       Зарегистрироваться
     </RegisterButton>
-      <header className="App-header">
+      <header style={{alignContent:"center", alignItems:"center"}}>
 
         <div style={{backgroundImage:`url(${main})`,width:1000, height:500, alignContent:"normal",alignItems:"center", justifyContent:"center",display:"flex" }}>
           <Button onClick={clicked} style={{alignContent:"center"}}>
@@ -105,13 +110,15 @@ function clicked()
           Стать организатором
         </Button>
 
-        <Button>
-          Попросить о помощи
-        </Button>
+        <Link to="/addVacance">
+          <Button onClick={goToAddVacance}>
+            Попросить о помощи
+          </Button>
+        </Link>
 
       </header>
 
-      <div style={{color:"#888888", textAlign:"center",fontSize:25}}>
+      <div style={{color:"#888888", textAlign:"left",paddingLeft:40, fontSize:25}}>
         <p>
           Какие вещи принимают в детские дома?
         </p>
@@ -142,15 +149,6 @@ function clicked()
 }
 
 
-root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="expenses" element={<Expenses />} />
-      <Route path="invoices" element={<Invoices />} />
-      <Route path="l" element={<p>123</p>}/>
-    </Routes>
-  </BrowserRouter>
-);
+
 
 export default App;

@@ -5,12 +5,27 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Calendar from 'react-calendar';
 
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import Expenses from "./routes/expenses";
+import Invoices from "./routes/invoices";
+import {AddVacance}  from './AddVacance';
+import main from "./images/main.png";
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-    <Calendar></Calendar>
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/addVacance" element={<AddVacance />} />
+    </Routes>
+  </BrowserRouter>
 );
 
 
