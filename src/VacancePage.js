@@ -8,6 +8,8 @@ import {
   } from "react-router-dom";
 import MapBasics from "./MapBasics";
 import styled from "styled-components";
+import React from "react";
+import Fetch from 'react-fetch'
 
 const Button = styled.button`
 background-color: #22CC99;
@@ -31,7 +33,9 @@ export default function VacancePage(props)
                 Требуется аниматор на детский праздник
             </p>
             <p>
-                 Требования: умение работать с детьми
+                 Требования:
+                 <Skill name="работа с детьми"></Skill> 
+                 <Skill name="актерское мастерство"></Skill> 
             </p>
             <p>12 июня, воскресенье 10:00-12:00</p>
 
@@ -42,6 +46,26 @@ export default function VacancePage(props)
             
 
             <MapBasics lat="55.76" lon="37.63"></MapBasics>
+            <Fetch url="http://jservice.io/api/random?count=1"><TestComponent/></Fetch>
         </div>
     )
 }
+
+function Skill(props)
+{
+    return (
+        <div style={{color: "ActiveBorder",
+            backgroundColor: "Background",
+            borderBlockStyle:"dotted",
+            height: 30, width:120}}>
+            {props.name}
+        </div>
+    )
+}
+
+class TestComponent extends React.Component{
+    render(){
+      console.log(this.props)
+      return <p>1</p>
+    }
+  }
