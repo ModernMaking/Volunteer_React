@@ -74,7 +74,7 @@ export default function Vacances()
          <VacanceCard name="even1" text="..ggggttgtgggr" img="main.png"/>
          <VacanceCard name="even1" text="..ggggttgtgggr" img="main.png"/>
          </div>
-        <MapBasics></MapBasics>
+        <MapBasics lat="55.76" lon="37.63"></MapBasics>
     </div>
     )
    

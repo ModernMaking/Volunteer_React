@@ -20,6 +20,9 @@ import {AddVacance}  from './AddVacance';
 import main from "./images/main.png";
 import { AddVolunteer } from './AddVolunteer';
 import VolunteerMap from './VolunteerMap';
+import VolunteerPage from './VolunteerPage';
+import VacancePage from './VacancePage';
+import ITS from './ITS';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -31,6 +34,9 @@ root.render(
       <Route path="/addVolunteer" element={<AddVolunteer />} />
       <Route path="/vacances" element={<Vacances />} />
       <Route path="/map" element={<MapBasics/>} />
+      <Route path="/volunteer/:id" element={<VolunteerPage/>} />
+      <Route path="/vacance/:id" element={<VacancePage/>} />
+      <Route path="/ITS" element={<ITS/>}/>
     </Routes>
   </BrowserRouter>
 );

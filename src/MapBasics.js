@@ -7,6 +7,7 @@ const placemarks = {'1':[55.76, 37.64]}
 
 class MapBasics extends React.Component {
   state = { showMap: true };
+  //props = {lat: '', lon: ''};
 
   toggleMap() {
     const { showMap } = this.state;
@@ -15,6 +16,7 @@ class MapBasics extends React.Component {
 
   render() {
     const { showMap } = this.state;
+  
 
     return (
       <YMaps>
@@ -25,33 +27,14 @@ class MapBasics extends React.Component {
             <Map state={mapState}>
                 
 
+ 
+
+
         <GeoObject
         // The geometry description.
         geometry={{
           type: 'Point',
-          coordinates: [55.762, 37.65],
-        }}
-        // Properties.
-        properties={{
-          // The placemark content.
-          iconContent: 'Волонтер в библиотеку',
-          hintContent: 'Ну давай уже тащи',
-        }}
-        // Options.
-        options={{
-          // The placemark's icon will stretch to fit its contents.
-          preset: 'islands#blackStretchyIcon',
-          // The placemark can be moved.
-          //draggable: true,
-        }}
-      />
-
-
-<GeoObject
-        // The geometry description.
-        geometry={{
-          type: 'Point',
-          coordinates: [55.749, 37.63],
+          coordinates: [this.props.lat, this.props.lon],
         }}
         // Properties.
         properties={{

@@ -29,6 +29,10 @@ import {AddVacance}  from './AddVacance';
 import main from "./images/main.png";
 import {Link} from 'react-router-dom';
 
+
+import { Carousel } from '@trendyol-js/react-carousel';
+import { Rerousel } from 'rerousel';
+
 const root = ReactDOM.createRoot(
   document.getElementById("root")
 );
@@ -81,6 +85,7 @@ function goToAddVacance()
   return <Link to="/addVacance" />
 }
 
+const customers = [1,1,1,1,1,1,1];
   return (
     <div className="App">
   
@@ -143,10 +148,16 @@ function goToAddVacance()
         <p>
           Добрые дела рядом
         </p>
-        <VacanceCard name="card1" text="ttttttttttt" img="main.png"/>
-        <VacanceCard name="card2" text="hhhhhhhhhh" img="main.png"/>
+
+        <Rerousel interval="100">
+        {customers.map((c) => {
+                    return <VacanceCard name="card1" text="ttttttttttt" img="main.png"/>;
+                })}
+        </Rerousel>
       </div>
-      
+      <p>
+        Текст
+      </p>
     </div>
   );
 }

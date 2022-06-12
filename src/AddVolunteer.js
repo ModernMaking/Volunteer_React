@@ -1,7 +1,7 @@
 import React from "react"
 import { Component } from "react"
 
-
+import MSelect, { MultiSelect } from './MSelect';
 
 export class AddVolunteer extends React.Component {
     constructor(props) {
@@ -60,9 +60,9 @@ export class AddVolunteer extends React.Component {
 
           <label>
             Дата рождения:
-            <input type="date"/>
+            <input type="date" max="2008-01-01"/>
           </label>
-
+            <br/>
             <label>
             Адрес (если не хотите рассекречивать место проживания, пишите ближайшие объекты):<br></br>
             <textarea
@@ -70,7 +70,17 @@ export class AddVolunteer extends React.Component {
               value={this.state.value}
               onChange={this.handleChange}
             />
-          </label><br></br>
+          </label>
+          <MSelect name="Выберите свои навыки" options={[
+            { label: "Водитель", value: "driver" },
+            { label: "Работа с детьми", value: "childs" },
+            { label: "Работа с животными", value: "animals" },
+          ]}></MSelect>
+          <div>
+      
+    </div>
+          
+          <br></br>
          
 
 
