@@ -2,16 +2,32 @@ import React from "react"
 import { Component } from "react"
 
 import MSelect, { MultiSelect } from './MSelect';
+import { AddressSuggestions } from 'react-dadata';
+import AddressInput from "./AddressInput";
 
 export class AddVolunteer extends React.Component {
     constructor(props) {
       super(props)
-      this.state = { value: '', tags:'' }
+      this.state = { value: '', tags:'', address:'' }
+
+      
   
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
+      this.addressChange = this.addressChange.bind(this)
+    }
+
+    printAddress()
+    {
+      console.log(this.state.address)
     }
   
+    addressChange(event)
+    {
+      alert(event.target.value)
+      this.setState({address: event.target.value})
+    }
+
     handleChange(event) {
       this.setState({ value: event.target.value })
 
@@ -19,6 +35,7 @@ export class AddVolunteer extends React.Component {
     {
       alert("Сработало автоопределение адреса. Мы знаем адрес торгушки.")
         this.setState({value: " Ворошиловский торговый центр: ул. Рабоче-Крестьянская, 9б"})
+        this.setState({address: "Волгоград, ул. Рабоче-Крестьянская, 9б"})
     }
 
     
@@ -26,6 +43,7 @@ export class AddVolunteer extends React.Component {
     {
       alert("Сработало автоопределение адреса. Мы знаем адрес политеха.")
         this.setState({value: "Волгоградский государственный технический университет: пр. Ленина, 28"})
+        this.setState({address: "Волгоград, пр. Ленина, 28"})
     }
   
    
@@ -37,6 +55,9 @@ export class AddVolunteer extends React.Component {
     }
   
     render() {
+
+      const addressInput =  <AddressInput/>//<AddressSuggestions token="89a56710c527db41cf71fe7709babb90a72f2beb" value={this.state.address} onChange={this.addressChange} > </AddressSuggestions>
+    
       return (
         <form onSubmit={this.handleSubmit}>
           
@@ -65,12 +86,10 @@ export class AddVolunteer extends React.Component {
             <br/>
             <label>
             Адрес (если не хотите рассекречивать место проживания, пишите ближайшие объекты):<br></br>
-            <textarea
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
+           {addressInput}
           </label>
+          <br/>
+          
           <MSelect name="Выберите свои навыки" options={[
             { label: "Водитель", value: "driver" },
             { label: "Работа с детьми", value: "childs" },
@@ -85,7 +104,7 @@ export class AddVolunteer extends React.Component {
 
 
 
-          <input type="submit" value="Отправить" />
+          <input type="submit" value="Отправить" onClick={this.printAddress} />
         </form>
       )
     }
