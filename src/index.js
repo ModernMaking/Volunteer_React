@@ -16,6 +16,7 @@ import Expenses from "./routes/expenses";
 import Invoices from "./routes/invoices";
 import {AddVacance}  from './AddVacance';
 import main from "./images/main.png";
+import { AddVolunteer } from './AddVolunteer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,6 +25,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/addVacance" element={<AddVacance />} />
+      <Route path="/addVolunteer" element={<AddVolunteer />} />
     </Routes>
   </BrowserRouter>
 );

@@ -100,9 +100,12 @@ function goToAddVacance()
       <header style={{alignContent:"center", alignItems:"center"}}>
 
         <div style={{backgroundImage:`url(${main})`,width:1000, height:500, alignContent:"normal",alignItems:"center", justifyContent:"center",display:"flex" }}>
-          <Button onClick={clicked} style={{alignContent:"center"}}>
+          
+        <Link to="/addVolunteer">
+          <Button style={{alignContent:"center"}}>
             Стать волонтером
           </Button>
+          </Link>
         </div>
         
 
