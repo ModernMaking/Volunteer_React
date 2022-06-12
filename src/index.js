@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Calendar from 'react-calendar';
-
+import Vacances from './Vacances'
+import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import MapBasics from './MapBasics';
 
 import {
   BrowserRouter,
@@ -17,6 +19,7 @@ import Invoices from "./routes/invoices";
 import {AddVacance}  from './AddVacance';
 import main from "./images/main.png";
 import { AddVolunteer } from './AddVolunteer';
+import VolunteerMap from './VolunteerMap';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -26,6 +29,8 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="/addVacance" element={<AddVacance />} />
       <Route path="/addVolunteer" element={<AddVolunteer />} />
+      <Route path="/vacances" element={<Vacances />} />
+      <Route path="/map" element={<MapBasics/>} />
     </Routes>
   </BrowserRouter>
 );
