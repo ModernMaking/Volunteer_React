@@ -1,9 +1,9 @@
 # Volunteer_React
 
-##Установка и запуск
+## Установка и запуск
 
 Для установки и запуска необходимо выполнить команды
 
-  npm install
+   npm install
 
-  npm run start
+   npm run start
