@@ -28,3 +28,7 @@ http://localhost:3000/ITS - заготовка ITS для волонтеров. 
 ## Пример автопобора тегов на странице создания вакансии
 
 ![2022-06-11 20-50-02](https://user-images.githubusercontent.com/46486489/173245675-c123cd8d-2df8-4f98-889e-b10dcaf5227c.gif)
+
+## ITS для волонтеров
+
+![2022-06-13 06-16-53](https://user-images.githubusercontent.com/46486489/173273509-10a5e3bd-b703-4271-8354-6dc1d6efc95f.gif)
