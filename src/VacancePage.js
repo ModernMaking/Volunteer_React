@@ -10,7 +10,7 @@ import MapBasics from "./MapBasics";
 import styled from "styled-components";
 import React from "react";
 import Fetch from 'react-fetch'
-
+import TopMenu from "./TopMenu";
 const Button = styled.button`
 background-color: #22CC99;
 color: white;
@@ -26,6 +26,7 @@ export default function VacancePage(props)
     const {id} =useParams();
     return (
         <div>
+            <TopMenu/>
             <p>
                 Страница вакансии id{id}
             </p>
@@ -39,7 +40,7 @@ export default function VacancePage(props)
             </p>
             <p>12 июня, воскресенье 10:00-12:00</p>
 
-            <Button>Откликунуться</Button>
+            <Button>Откликнуться</Button>
 
             <p>Москва, ул. Мясницкая, 6</p>
 

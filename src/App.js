@@ -32,6 +32,7 @@ import {Link} from 'react-router-dom';
 
 import { Carousel } from '@trendyol-js/react-carousel';
 import { Rerousel } from 'rerousel';
+import TopMenu from './TopMenu';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root")
@@ -89,13 +90,7 @@ const customers = [1,1,1,1,1,1,1];
   return (
     <div className="App">
   
-     <Menu>
-        <a href="dd.html"> Добрые дела </a>
-        <a href="dd.html"> Новости</a>
-        <a href="dd.html"> Проекты </a>
-        <a href="dd.html"> Организаторы </a>
-        <a href="dd.html"> Волонтеры </a>
-    </Menu>
+     <TopMenu/>
     <EnterButton>
       Войти
     </EnterButton>

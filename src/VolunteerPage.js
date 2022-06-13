@@ -6,12 +6,14 @@ import {
     useParams,
   } from "react-router-dom";
 import portrait from './images/portrait.png'
+import TopMenu from "./TopMenu";
 import VacanceCard from "./VacanceCard";
 export default function VolunteerPage(props)
 {
     const {id} =useParams();
     return (
         <div>
+            <TopMenu/>
             <img src={portrait} style={{float:"left", width:300, height:300, margin:20}}></img>
         <div>
             <br/>

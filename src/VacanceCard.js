@@ -2,6 +2,8 @@
 export default function VacanceCard(props)
 {
     return (
+        <div>
+    
         <div style={{width:props.width, height:props.heigth, border:"solid", margin:20, flexDirection:"column", display:"inline-block"}}>
             <div style={{width:props.width, height:props.heigth/2, backgroundImage:`url(${props.img})`}}>
             </div>
@@ -12,5 +14,8 @@ export default function VacanceCard(props)
                 {props.text}
             </p>
         </div>
+
+        </div>
+        
     )
 }
