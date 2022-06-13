@@ -37,11 +37,25 @@ export default function ITSQuestion(props)
                 <p style={{fontSize:50}}>
                     {props.text}
                 </p>
-                    <select disabled={disabled} style={{fontSize:30}} value={value} onChange={handleChange}>
+                    <select disabled={disabled} style={{fontSize:30}} value={value} onChange={(event)=>{
+                        setValue(event.target.value);
+                        props.variants.map(variant => {
+                            if (event.target.value==variant.value)
+                            {
+                                setPValue(variant.hint)
+                                if (variant.isCorrect==true)
+                                    setDisabled(true)
+                            }
+                        }
+                            ) 
+                        
+                        }}>
                         <option selected="true" disabled={upperDisabled}>Выбрать ответ</option>
                         {
                             props.variants.map(variant => 
-                            <option onSelect={selectedLess} onClick={()=>{upperDisabled=true; pvalue=variant.hint; this.disabled=variant.isCorrect;}}>{variant.text}</option>
+                            <option onSelect={()=>{{upperDisabled=true; pvalue=variant.hint; this.disabled=variant.isCorrect;}}} value={variant.value} >
+                                {variant.text}
+                            </option>
                         )}
 
                 </select>
